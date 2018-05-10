@@ -2,19 +2,20 @@
 
 using namespace std;
 
+
 struct node
 {
 	int data;
 	node *next;
 };
 
-class stack
+class list
 {
 	node *n;
 	int size;
  
  public:
- 	stack()
+ 	list()
  	{
  		n=NULL;
  		size=0;
@@ -70,7 +71,7 @@ class stack
  			return -1;
  	}
 
- 	~stack()
+ 	~list()
  	{
  		node *temp;
  		while(n->next!=NULL)
@@ -83,16 +84,3 @@ class stack
  			delete n;
  	}
 };
-
-int main()
-{
-	stack s;
-	s.push(5);
-	s.push(10);
-	s.traverse();
-	cout<<endl<<s.peek();
-	s.pop();
-	s.push(20);
-	s.push(15);
-	cout<<endl<<s.peek();
-}
